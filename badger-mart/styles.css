@@ -21,10 +21,30 @@ table, th, td {
 }
 
 /* TODO: Add your primary and secondary styling below! */
-.primary-button {
 
+/* used green background, font weight and different padding and border radius for primary button*/
+.primary-button {
+ background-color: #0ec50e;
+ border: none; 
+ font-weight: 700; 
+ border-radius: 6px;
+ 
+ width: 15%;
+ height: 40px;
+
+
+
+ 
 }
 
 .secondary-button {
   
+  border: 3px double black;
+  color: purple;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  height: 40px;
+ 
 }

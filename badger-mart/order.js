@@ -54,21 +54,50 @@ const SALES_TAX = {
 	WY:	0.040,
 }
 
+
 function roundMoney(num) {
 	return Math.round(num * 100) / 100;
 }
 
 function calculateSubtotal() {
-	return 0.00; // TODO calculateSubtotal
+	
+	let total_price=0;
+	for(let i = 0; i<ITEMS.length ; i++){
+		
+		const quantity_ofitem =parseInt(document.getElementById(`${ITEMS[i]}`.concat("-quantity")).value);
+		const price_ofitem =parseFloat(document.getElementById(`${ITEMS[i]}`.concat("-price")).innerText);
+		total_price = total_price+  quantity_ofitem * price_ofitem;
+		if(i == ITEMS.length-1){
+			return (total_price);
+		}
+		
+	}
+	
+	
 }
 
 function calculateSalesTax() {
-	return 0.00; // TODO calculateSalesTax
+	const state = document.getElementById("state-tax").value;
+	return roundMoney(getSalesTaxRateForState(state) * calculateSubtotal());
+	
 }
 
 function getSalesTaxRateForState(state) {
-	return 0.00; // TODO getSalesTaxRateForState
+	
+	let obj_keys = Object.keys(SALES_TAX);
+	let obj_values = Object.values(SALES_TAX);
+
+	let key_len = Object.keys(SALES_TAX).length;
+	for(let i = 0; i<key_len; i++){
+		if(obj_keys[i] == state){
+			return (obj_values[i]);
+		}
+
+	}
+	
+	
 }
+
 
 document.getElementById("btn-what-is-my-sales-tax").addEventListener("click", () => {
 	const state = document.getElementById("state-tax").value;
@@ -83,4 +112,8 @@ document.getElementById("btn-sales-tax").addEventListener("click", () => {
 	alert("Your sales tax is: $" + calculateSalesTax().toFixed(2));
 });
 
-// TODO Add an event listener to btn-checkout
+document.getElementById("btn-checkout").addEventListener("click" , () => {
+  alert("Your total is: $" + (calculateSubtotal()+calculateSalesTax()).toFixed(2)  );
+});
+
+
