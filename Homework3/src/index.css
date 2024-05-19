@@ -1,0 +1,53 @@
+.inline {
+  display: inline-block;
+  margin: 0.5rem;
+  font-weight: 600;
+  
+}
+
+body{
+  font-family: "Oswald";
+  background-color: #D8F3DC;
+}
+
+.featured{
+  
+  font-size: 20px;
+  text-decoration:underline;
+  font-weight: 600;
+}
+.rows{
+  height: 99%;
+  border-radius: 10px;
+ 
+}
+.title{
+  font-size: 50px;
+  font-weight: 900;
+  color: #054a29; 
+  
+ 
+
+  
+  
+}
+.increase_btn , .decrease_btn {
+  background-color: #d8f3dc;
+  border: none;
+  border: 2px solid #081C15;
+  height: 35px;
+  width: 35px;
+  border-radius: 10px;
+}
+
+.price_row{
+  font-weight: 700;
+}
+
+.material-symbols-outlined{
+  font-size: 60px;
+ position: static;
+ color: #054a29;
+
+ 
+}
