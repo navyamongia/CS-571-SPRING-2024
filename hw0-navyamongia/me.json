@@ -1,0 +1,12 @@
+{
+    "name":{
+
+        "first": "Navya",
+        "last": "Mongia"
+    },
+    "fromWisconsin": false,
+    "numCredits": 9,
+    "major": "Computer Science",
+    "interests": ["dancing", "cooking", "drawing"]
+
+}
